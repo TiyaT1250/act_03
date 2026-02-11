@@ -23,7 +23,7 @@ class ValentineHome extends StatefulWidget {
 }
 
 class _ValentineHomeState extends State<ValentineHome> {
-  final List<String> emojiOptions = ['Sweet Heart', 'Party Heart'];
+  final List<String> emojiOptions = ['Sweet Heart', 'Party Heart', 'Chocolate', 'Cupid'];
   String selectedEmoji = 'Sweet Heart';
 
   @override
@@ -32,6 +32,16 @@ class _ValentineHomeState extends State<ValentineHome> {
       appBar: AppBar(title: const Text('Cupid\'s Canvas')),
       body: Column(
         children: [
+          Container(
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/heart_eyes.png'),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
           const SizedBox(height: 16),
           DropdownButton<String>(
             value: selectedEmoji,
@@ -95,6 +105,7 @@ class HeartEmojiPainter extends CustomPainter {
         ..close();
       canvas.drawPath(hatPath, hatPaint);
     }
+
   }
 
   @override
